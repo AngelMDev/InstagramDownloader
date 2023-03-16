@@ -24,11 +24,11 @@ export class BackgroundMessageHandler {
 
     private static async onUpdate(details: Runtime.OnInstalledDetailsType): Promise<void> {
         if (details?.reason !== 'update') return;
-        //
-        // const options = browser.runtime.getURL('options.html');
-        // await browser.tabs.create({
-        //     url: options,
-        // });
+        
+        const options = browser.runtime.getURL('options.html');
+        await browser.tabs.create({
+            url: options,
+        });
     }
 
     private static async onMessage(message: DownloadMessage): Promise<void> {
